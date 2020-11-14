@@ -1,0 +1,1962 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for FakerPHP / Faker">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.4">
+    
+    
+      
+        <title>FakerPHP / Faker</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.358818c7.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.f0267088.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#2094f3">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:300,400,400i,700%7CFira+Code&display=fallback">
+        <style>body,input{font-family:"Nunito",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Code",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#faker" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="." title="FakerPHP / Faker" class="md-header-nav__button md-logo" aria-label="FakerPHP / Faker">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            FakerPHP / Faker
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Faker
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/FakerPHP/fakerphp.github.io/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="FakerPHP / Faker" class="md-nav__button md-logo" aria-label="FakerPHP / Faker">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    FakerPHP / Faker
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/FakerPHP/fakerphp.github.io/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Faker
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="." class="md-nav__link md-nav__link--active">
+      Faker
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-usage" class="md-nav__link">
+    Basic Usage
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#autoloading" class="md-nav__link">
+    Autoloading
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-fake-data" class="md-nav__link">
+    Create fake data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formatters" class="md-nav__link">
+    Formatters
+  </a>
+  
+    <nav class="md-nav" aria-label="Formatters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fakerproviderbase" class="md-nav__link">
+    Faker\Provider\Base
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakerproviderlorem" class="md-nav__link">
+    Faker\Provider\Lorem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakerprovideren_usperson" class="md-nav__link">
+    Faker\Provider\en_US\Person
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakerprovideren_usaddress" class="md-nav__link">
+    Faker\Provider\en_US\Address
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakerprovideren_usphonenumber" class="md-nav__link">
+    Faker\Provider\en_US\PhoneNumber
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakerprovideren_uscompany" class="md-nav__link">
+    Faker\Provider\en_US\Company
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakerprovideren_ustext" class="md-nav__link">
+    Faker\Provider\en_US\Text
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakerproviderdatetime" class="md-nav__link">
+    Faker\Provider\DateTime
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakerproviderinternet" class="md-nav__link">
+    Faker\Provider\Internet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakerprovideruseragent" class="md-nav__link">
+    Faker\Provider\UserAgent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakerproviderpayment" class="md-nav__link">
+    Faker\Provider\Payment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakerprovidercolor" class="md-nav__link">
+    Faker\Provider\Color
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakerproviderfile" class="md-nav__link">
+    Faker\Provider\File
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakerproviderimage" class="md-nav__link">
+    Faker\Provider\Image
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakerprovideruuid" class="md-nav__link">
+    Faker\Provider\Uuid
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakerproviderbarcode" class="md-nav__link">
+    Faker\Provider\Barcode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakerprovidermiscellaneous" class="md-nav__link">
+    Faker\Provider\Miscellaneous
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakerproviderbiased" class="md-nav__link">
+    Faker\Provider\Biased
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakerproviderhtmllorem" class="md-nav__link">
+    Faker\Provider\HtmlLorem
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modifiers" class="md-nav__link">
+    Modifiers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#localization" class="md-nav__link">
+    Localization
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#populating-entities-using-an-orm-or-an-odm" class="md-nav__link">
+    Populating Entities Using an ORM or an ODM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seeding-the-generator" class="md-nav__link">
+    Seeding the Generator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faker-internals-understanding-providers" class="md-nav__link">
+    Faker Internals: Understanding Providers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#language-specific-formatters" class="md-nav__link">
+    Language specific formatters
+  </a>
+  
+    <nav class="md-nav" aria-label="Language specific formatters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#misnamed-locales" class="md-nav__link">
+    Misnamed locales
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#third-party-libraries-extendingbased-on-faker" class="md-nav__link">
+    Third-Party Libraries Extending/Based On Faker
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    License
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Locales
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Locales" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Locales
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/ar_SA/" class="md-nav__link">
+      Arabic (Saudi Arabia)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/bg_BG/" class="md-nav__link">
+      Bulgarian (Bulgaria)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/cs_CZ/" class="md-nav__link">
+      Czech (Czech Republic)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/da_DK/" class="md-nav__link">
+      Danish (Denmark)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/de_AT/" class="md-nav__link">
+      German (Austria)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/de_CH/" class="md-nav__link">
+      German (Switzerland)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/de_DE/" class="md-nav__link">
+      German (Germany)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/en_HK/" class="md-nav__link">
+      English (Hong Kong SAR China)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/en_NG/" class="md-nav__link">
+      English (Nigeria)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/en_NZ/" class="md-nav__link">
+      English (New Zealand)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/en_US/" class="md-nav__link">
+      English (United States)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/en_ZA/" class="md-nav__link">
+      English (South Africa)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/es_ES/" class="md-nav__link">
+      Spanish (Spain)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/es_PE/" class="md-nav__link">
+      Spanish (Peru)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/es_VE/" class="md-nav__link">
+      Spanish (Venezuela)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/fa_IR/" class="md-nav__link">
+      Persian (Iran)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/fi_FI/" class="md-nav__link">
+      Finnish (Finland)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/fr_BE/" class="md-nav__link">
+      French (Belgium)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/fr_CH/" class="md-nav__link">
+      French (Switzerland)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/fr_FR/" class="md-nav__link">
+      French (France)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/he_IL/" class="md-nav__link">
+      Hebrew (Israel)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/hr_HR/" class="md-nav__link">
+      Croatian (Croatia)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/hu_HU/" class="md-nav__link">
+      Hungarian (Hungary)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/id_ID/" class="md-nav__link">
+      Indonesian (Indonesia)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/it_CH/" class="md-nav__link">
+      Italian (Switzerland)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/it_IT/" class="md-nav__link">
+      Italian (Italy)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/ja_JP/" class="md-nav__link">
+      Japanese (Japan)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/ka_GE/" class="md-nav__link">
+      Georgian (Georgia)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/kk_KZ/" class="md-nav__link">
+      Kazakh (Kazakhstan)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/ko_KR/" class="md-nav__link">
+      Korean (South Korea)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/lt_LT/" class="md-nav__link">
+      Lithuanian (Lithuania)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/lv_LV/" class="md-nav__link">
+      Latvian (Latvia)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/ms_MY/" class="md-nav__link">
+      Malay (Malaysia)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/nb_NO/" class="md-nav__link">
+      Norwegian Bokmål (Norway)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/ne_NP/" class="md-nav__link">
+      Nepali (Nepal)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/nl_BE/" class="md-nav__link">
+      Dutch (Belgium)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/nl_NL/" class="md-nav__link">
+      Dutch (Netherlands)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/pl_PL/" class="md-nav__link">
+      Polish (Poland)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/pt_BR/" class="md-nav__link">
+      Portuguese (Brazil)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/pt_PT/" class="md-nav__link">
+      Portuguese (Portugal)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/ro_MD/" class="md-nav__link">
+      Romanian (Moldova)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/ro_RO/" class="md-nav__link">
+      Romanian (Romania)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/ru_RU/" class="md-nav__link">
+      Russian (Russia)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/sv_SE/" class="md-nav__link">
+      Swedish (Sweden)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/tr_TR/" class="md-nav__link">
+      Turkish (Turkey)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/uk_UA/" class="md-nav__link">
+      Ukrainian (Ukraine)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/zh_Hans_CN/" class="md-nav__link">
+      Chinese (Simplified, China)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="locales/zh_Hant_TW/" class="md-nav__link">
+      Chinese (Traditional, Taiwan)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-usage" class="md-nav__link">
+    Basic Usage
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#autoloading" class="md-nav__link">
+    Autoloading
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-fake-data" class="md-nav__link">
+    Create fake data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formatters" class="md-nav__link">
+    Formatters
+  </a>
+  
+    <nav class="md-nav" aria-label="Formatters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fakerproviderbase" class="md-nav__link">
+    Faker\Provider\Base
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakerproviderlorem" class="md-nav__link">
+    Faker\Provider\Lorem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakerprovideren_usperson" class="md-nav__link">
+    Faker\Provider\en_US\Person
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakerprovideren_usaddress" class="md-nav__link">
+    Faker\Provider\en_US\Address
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakerprovideren_usphonenumber" class="md-nav__link">
+    Faker\Provider\en_US\PhoneNumber
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakerprovideren_uscompany" class="md-nav__link">
+    Faker\Provider\en_US\Company
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakerprovideren_ustext" class="md-nav__link">
+    Faker\Provider\en_US\Text
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakerproviderdatetime" class="md-nav__link">
+    Faker\Provider\DateTime
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakerproviderinternet" class="md-nav__link">
+    Faker\Provider\Internet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakerprovideruseragent" class="md-nav__link">
+    Faker\Provider\UserAgent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakerproviderpayment" class="md-nav__link">
+    Faker\Provider\Payment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakerprovidercolor" class="md-nav__link">
+    Faker\Provider\Color
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakerproviderfile" class="md-nav__link">
+    Faker\Provider\File
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakerproviderimage" class="md-nav__link">
+    Faker\Provider\Image
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakerprovideruuid" class="md-nav__link">
+    Faker\Provider\Uuid
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakerproviderbarcode" class="md-nav__link">
+    Faker\Provider\Barcode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakerprovidermiscellaneous" class="md-nav__link">
+    Faker\Provider\Miscellaneous
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakerproviderbiased" class="md-nav__link">
+    Faker\Provider\Biased
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fakerproviderhtmllorem" class="md-nav__link">
+    Faker\Provider\HtmlLorem
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modifiers" class="md-nav__link">
+    Modifiers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#localization" class="md-nav__link">
+    Localization
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#populating-entities-using-an-orm-or-an-odm" class="md-nav__link">
+    Populating Entities Using an ORM or an ODM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seeding-the-generator" class="md-nav__link">
+    Seeding the Generator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faker-internals-understanding-providers" class="md-nav__link">
+    Faker Internals: Understanding Providers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#language-specific-formatters" class="md-nav__link">
+    Language specific formatters
+  </a>
+  
+    <nav class="md-nav" aria-label="Language specific formatters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#misnamed-locales" class="md-nav__link">
+    Misnamed locales
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#third-party-libraries-extendingbased-on-faker" class="md-nav__link">
+    Third-Party Libraries Extending/Based On Faker
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    License
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/FakerPHP/fakerphp.github.io/edit/main/docs/index.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="faker">Faker</h1>
+<p><a href="https://packagist.org/packages/fakerphp/faker"><img alt="Packagist Downloads" src="https://img.shields.io/packagist/dm/FakerPHP/Faker" /></a>
+<a href="https://github.com/FakerPHP/Faker/actions"><img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/FakerPHP/Faker/Continuous%20Integration/main" /></a>
+<a href="https://github.styleci.io/repos/307658860?branch=main"><img alt="StyleCI" src="https://github.styleci.io/repos/307658860/shield?branch=main&amp;style=flat" /></a></p>
+<p>Faker is a PHP library that generates fake data for you. Whether you need to bootstrap your database, create good-looking XML documents, fill-in your persistence to stress test it, or anonymize data taken from a production service, Faker is for you.</p>
+<p>Faker is heavily inspired by Perl's <a href="http://search.cpan.org/~jasonk/Data-Faker-0.07/">Data::Faker</a>, and by ruby's <a href="https://rubygems.org/gems/faker">Faker</a>.</p>
+<p>Faker requires PHP &gt;= 7.1.</p>
+<h2 id="installation">Installation</h2>
+<div class="highlight"><pre><span></span><code>composer require fakerphp/faker
+</code></pre></div>
+<h2 id="basic-usage">Basic Usage</h2>
+<h3 id="autoloading">Autoloading</h3>
+<p>Faker supports both <code>PSR-0</code> as <code>PSR-4</code> autoloaders.
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1"># When installed via composer</span>
+<span class="k">require_once</span> <span class="s1">&#39;vendor/autoload.php&#39;</span><span class="p">;</span>
+</code></pre></div></p>
+<p>You can also load <code>Fakers</code> shipped <code>PSR-0</code> autoloader
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1"># Load Fakers own autoloader</span>
+<span class="k">require_once</span> <span class="s1">&#39;/path/to/Faker/src/autoload.php&#39;</span><span class="p">;</span>
+</code></pre></div></p>
+<p><em>alternatively, you can use any another PSR-4 compliant autoloader</em></p>
+<h3 id="create-fake-data">Create fake data</h3>
+<p>Use <code>Faker\Factory::create()</code> to create and initialize a faker generator, which can generate data by accessing properties named after the type of data you want.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// use the factory to create a Faker\Generator instance</span>
+<span class="nv">$faker</span> <span class="o">=</span> <span class="nx">Faker\Factory</span><span class="o">::</span><span class="na">create</span><span class="p">();</span>
+
+<span class="c1">// generate data by accessing properties</span>
+<span class="k">echo</span> <span class="nv">$faker</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">;</span>
+  <span class="c1">// &#39;Lucy Cechtelar&#39;;</span>
+<span class="k">echo</span> <span class="nv">$faker</span><span class="o">-&gt;</span><span class="na">address</span><span class="p">;</span>
+  <span class="c1">// &quot;426 Jordy Lodge</span>
+  <span class="c1">// Cartwrightshire, SC 88120-6700&quot;</span>
+<span class="k">echo</span> <span class="nv">$faker</span><span class="o">-&gt;</span><span class="na">text</span><span class="p">;</span>
+  <span class="c1">// Dolores sit sint laboriosam dolorem culpa et autem. Beatae nam sunt fugit</span>
+  <span class="c1">// et sit et mollitia sed.</span>
+  <span class="c1">// Fuga deserunt tempora facere magni omnis. Omnis quia temporibus laudantium</span>
+  <span class="c1">// sit minima sint.</span>
+</code></pre></div>
+<p>Even if this example shows a property access, each call to <code>$faker-&gt;name</code> yields a different (random) result. This is because Faker uses <code>__get()</code> magic, and forwards <code>Faker\Generator-&gt;$property</code> calls to <code>Faker\Generator-&gt;format($property)</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nv">$i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="nv">$faker</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+  <span class="c1">// Adaline Reichel</span>
+  <span class="c1">// Dr. Santa Prosacco DVM</span>
+  <span class="c1">// Noemy Vandervort V</span>
+  <span class="c1">// Lexi O&#39;Conner</span>
+  <span class="c1">// Gracie Weber</span>
+  <span class="c1">// Roscoe Johns</span>
+  <span class="c1">// Emmett Lebsack</span>
+  <span class="c1">// Keegan Thiel</span>
+  <span class="c1">// Wellington Koelpin II</span>
+  <span class="c1">// Ms. Karley Kiehn V</span>
+</code></pre></div>
+<p><strong>Tip</strong>: For a quick generation of fake data, you can also use Faker as a command line tool thanks to <a href="https://github.com/bit3/faker-cli">faker-cli</a>.</p>
+<h2 id="formatters">Formatters</h2>
+<p>Each of the generator properties (like <code>name</code>, <code>address</code>, and <code>lorem</code>) are called "formatters". A faker generator has many of them, packaged in "providers". Here is a list of the bundled formatters in the default locale.</p>
+<h3 id="fakerproviderbase"><code>Faker\Provider\Base</code></h3>
+<div class="highlight"><pre><span></span><code>randomDigit             // 7
+randomDigitNot(5)       // 0, 1, 2, 3, 4, 6, 7, 8, or 9
+randomDigitNotNull      // 5
+randomNumber($nbDigits = NULL, $strict = false) // 79907610
+randomFloat($nbMaxDecimals = NULL, $min = 0, $max = NULL) // 48.8932
+numberBetween($min = 1000, $max = 9000) // 8567
+randomLetter            // &#39;b&#39;
+// returns randomly ordered subsequence of a provided array
+randomElements($array = array (&#39;a&#39;,&#39;b&#39;,&#39;c&#39;), $count = 1) // array(&#39;c&#39;)
+randomElement($array = array (&#39;a&#39;,&#39;b&#39;,&#39;c&#39;)) // &#39;b&#39;
+shuffle(&#39;hello, world&#39;) // &#39;rlo,h eoldlw&#39;
+shuffle(array(1, 2, 3)) // array(2, 1, 3)
+numerify(&#39;Hello ###&#39;) // &#39;Hello 609&#39;
+lexify(&#39;Hello ???&#39;) // &#39;Hello wgt&#39;
+bothify(&#39;Hello ##??&#39;) // &#39;Hello 42jz&#39;
+asciify(&#39;Hello ***&#39;) // &#39;Hello R6+&#39;
+regexify(&#39;[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}&#39;); // sm0@y8k96a.ej
+</code></pre></div>
+<h3 id="fakerproviderlorem"><code>Faker\Provider\Lorem</code></h3>
+<div class="highlight"><pre><span></span><code>word                                             // &#39;aut&#39;
+words($nb = 3, $asText = false)                  // array(&#39;porro&#39;, &#39;sed&#39;, &#39;magni&#39;)
+sentence($nbWords = 6, $variableNbWords = true)  // &#39;Sit vitae voluptas sint non voluptates.&#39;
+sentences($nb = 3, $asText = false)              // array(&#39;Optio quos qui illo error.&#39;, &#39;Laborum vero a officia id corporis.&#39;, &#39;Saepe provident esse hic eligendi.&#39;)
+paragraph($nbSentences = 3, $variableNbSentences = true) // &#39;Ut ab voluptas sed a nam. Sint autem inventore aut officia aut aut blanditiis. Ducimus eos odit amet et est ut eum.&#39;
+paragraphs($nb = 3, $asText = false)             // array(&#39;Quidem ut sunt et quidem est accusamus aut. Fuga est placeat rerum ut. Enim ex eveniet facere sunt.&#39;, &#39;Aut nam et eum architecto fugit repellendus illo. Qui ex esse veritatis.&#39;, &#39;Possimus omnis aut incidunt sunt. Asperiores incidunt iure sequi cum culpa rem. Rerum exercitationem est rem.&#39;)
+text($maxNbChars = 200)                          // &#39;Fuga totam reiciendis qui architecto fugiat nemo. Consequatur recusandae qui cupiditate eos quod.&#39;
+</code></pre></div>
+<h3 id="fakerprovideren_usperson"><code>Faker\Provider\en_US\Person</code></h3>
+<div class="highlight"><pre><span></span><code>title($gender = null|&#39;male&#39;|&#39;female&#39;)     // &#39;Ms.&#39;
+titleMale                                 // &#39;Mr.&#39;
+titleFemale                               // &#39;Ms.&#39;
+suffix                                    // &#39;Jr.&#39;
+name($gender = null|&#39;male&#39;|&#39;female&#39;)      // &#39;Dr. Zane Stroman&#39;
+firstName($gender = null|&#39;male&#39;|&#39;female&#39;) // &#39;Maynard&#39;
+firstNameMale                             // &#39;Maynard&#39;
+firstNameFemale                           // &#39;Rachel&#39;
+lastName                                  // &#39;Zulauf&#39;
+</code></pre></div>
+<h3 id="fakerprovideren_usaddress"><code>Faker\Provider\en_US\Address</code></h3>
+<div class="highlight"><pre><span></span><code>cityPrefix                          // &#39;Lake&#39;
+secondaryAddress                    // &#39;Suite 961&#39;
+state                               // &#39;NewMexico&#39;
+stateAbbr                           // &#39;OH&#39;
+citySuffix                          // &#39;borough&#39;
+streetSuffix                        // &#39;Keys&#39;
+buildingNumber                      // &#39;484&#39;
+city                                // &#39;West Judge&#39;
+streetName                          // &#39;Keegan Trail&#39;
+streetAddress                       // &#39;439 Karley Loaf Suite 897&#39;
+postcode                            // &#39;17916&#39;
+address                             // &#39;8888 Cummings Vista Apt. 101, Susanbury, NY 95473&#39;
+country                             // &#39;Falkland Islands (Malvinas)&#39;
+latitude($min = -90, $max = 90)     // 77.147489
+longitude($min = -180, $max = 180)  // 86.211205
+</code></pre></div>
+<h3 id="fakerprovideren_usphonenumber"><code>Faker\Provider\en_US\PhoneNumber</code></h3>
+<div class="highlight"><pre><span></span><code>phoneNumber             // &#39;201-886-0269 x3767&#39;
+tollFreePhoneNumber     // &#39;(888) 937-7238&#39;
+e164PhoneNumber     // &#39;+27113456789&#39;
+</code></pre></div>
+<h3 id="fakerprovideren_uscompany"><code>Faker\Provider\en_US\Company</code></h3>
+<div class="highlight"><pre><span></span><code>catchPhrase             // &#39;Monitored regional contingency&#39;
+bs                      // &#39;e-enable robust architectures&#39;
+company                 // &#39;Bogan-Treutel&#39;
+companySuffix           // &#39;and Sons&#39;
+jobTitle                // &#39;Cashier&#39;
+</code></pre></div>
+<h3 id="fakerprovideren_ustext"><code>Faker\Provider\en_US\Text</code></h3>
+<div class="highlight"><pre><span></span><code>realText($maxNbChars = 200, $indexSize = 2) // &quot;And yet I wish you could manage it?) &#39;And what are they made of?&#39; Alice asked in a shrill, passionate voice. &#39;Would YOU like cats if you were never even spoke to Time!&#39; &#39;Perhaps not,&#39; Alice replied.&quot;
+</code></pre></div>
+<h3 id="fakerproviderdatetime"><code>Faker\Provider\DateTime</code></h3>
+<div class="highlight"><pre><span></span><code>unixTime($max = &#39;now&#39;)                // 58781813
+dateTime($max = &#39;now&#39;, $timezone = null) // DateTime(&#39;2008-04-25 08:37:17&#39;, &#39;UTC&#39;)
+dateTimeAD($max = &#39;now&#39;, $timezone = null) // DateTime(&#39;1800-04-29 20:38:49&#39;, &#39;Europe/Paris&#39;)
+iso8601($max = &#39;now&#39;)                 // &#39;1978-12-09T10:10:29+0000&#39;
+date($format = &#39;Y-m-d&#39;, $max = &#39;now&#39;) // &#39;1979-06-09&#39;
+time($format = &#39;H:i:s&#39;, $max = &#39;now&#39;) // &#39;20:49:42&#39;
+dateTimeBetween($startDate = &#39;-30 years&#39;, $endDate = &#39;now&#39;, $timezone = null) // DateTime(&#39;2003-03-15 02:00:49&#39;, &#39;Africa/Lagos&#39;)
+dateTimeInInterval($startDate = &#39;-30 years&#39;, $interval = &#39;+ 5 days&#39;, $timezone = null) // DateTime(&#39;2003-03-15 02:00:49&#39;, &#39;Antartica/Vostok&#39;)
+dateTimeThisCentury($max = &#39;now&#39;, $timezone = null)     // DateTime(&#39;1915-05-30 19:28:21&#39;, &#39;UTC&#39;)
+dateTimeThisDecade($max = &#39;now&#39;, $timezone = null)      // DateTime(&#39;2007-05-29 22:30:48&#39;, &#39;Europe/Paris&#39;)
+dateTimeThisYear($max = &#39;now&#39;, $timezone = null)        // DateTime(&#39;2011-02-27 20:52:14&#39;, &#39;Africa/Lagos&#39;)
+dateTimeThisMonth($max = &#39;now&#39;, $timezone = null)       // DateTime(&#39;2011-10-23 13:46:23&#39;, &#39;Antarctica/Vostok&#39;)
+amPm($max = &#39;now&#39;)                    // &#39;pm&#39;
+dayOfMonth($max = &#39;now&#39;)              // &#39;04&#39;
+dayOfWeek($max = &#39;now&#39;)               // &#39;Friday&#39;
+month($max = &#39;now&#39;)                   // &#39;06&#39;
+monthName($max = &#39;now&#39;)               // &#39;January&#39;
+year($max = &#39;now&#39;)                    // &#39;1993&#39;
+century                               // &#39;VI&#39;
+timezone                              // &#39;Europe/Paris&#39;
+</code></pre></div>
+<p>Methods accepting a <code>$timezone</code> argument default to <code>date_default_timezone_get()</code>. You can pass a custom timezone string to each method, or define a custom timezone for all time methods at once using <code>$faker::setDefaultTimezone($timezone)</code>.</p>
+<h3 id="fakerproviderinternet"><code>Faker\Provider\Internet</code></h3>
+<div class="highlight"><pre><span></span><code>email                   // &#39;tkshlerin@collins.com&#39;
+safeEmail               // &#39;king.alford@example.org&#39;
+freeEmail               // &#39;bradley72@gmail.com&#39;
+companyEmail            // &#39;russel.durward@mcdermott.org&#39;
+freeEmailDomain         // &#39;yahoo.com&#39;
+safeEmailDomain         // &#39;example.org&#39;
+userName                // &#39;wade55&#39;
+password                // &#39;k&amp;|X+a45*2[&#39;
+domainName              // &#39;wolffdeckow.net&#39;
+domainWord              // &#39;feeney&#39;
+tld                     // &#39;biz&#39;
+url                     // &#39;http://www.skilesdonnelly.biz/aut-accusantium-ut-architecto-sit-et.html&#39;
+slug                    // &#39;aut-repellat-commodi-vel-itaque-nihil-id-saepe-nostrum&#39;
+ipv4                    // &#39;109.133.32.252&#39;
+localIpv4               // &#39;10.242.58.8&#39;
+ipv6                    // &#39;8e65:933d:22ee:a232:f1c1:2741:1f10:117c&#39;
+macAddress              // &#39;43:85:B7:08:10:CA&#39;
+</code></pre></div>
+<h3 id="fakerprovideruseragent"><code>Faker\Provider\UserAgent</code></h3>
+<div class="highlight"><pre><span></span><code>userAgent              // &#39;Mozilla/5.0 (Windows CE) AppleWebKit/5350 (KHTML, like Gecko) Chrome/13.0.888.0 Safari/5350&#39;
+chrome                 // &#39;Mozilla/5.0 (Macintosh; PPC Mac OS X 10_6_5) AppleWebKit/5312 (KHTML, like Gecko) Chrome/14.0.894.0 Safari/5312&#39;
+firefox                // &#39;Mozilla/5.0 (X11; Linuxi686; rv:7.0) Gecko/20101231 Firefox/3.6&#39;
+safari                 // &#39;Mozilla/5.0 (Macintosh; U; PPC Mac OS X 10_7_1 rv:3.0; en-US) AppleWebKit/534.11.3 (KHTML, like Gecko) Version/4.0 Safari/534.11.3&#39;
+opera                  // &#39;Opera/8.25 (Windows NT 5.1; en-US) Presto/2.9.188 Version/10.00&#39;
+internetExplorer       // &#39;Mozilla/5.0 (compatible; MSIE 7.0; Windows 98; Win 9x 4.90; Trident/3.0)&#39;
+</code></pre></div>
+<h3 id="fakerproviderpayment"><code>Faker\Provider\Payment</code></h3>
+<div class="highlight"><pre><span></span><code>creditCardType          // &#39;MasterCard&#39;
+creditCardNumber        // &#39;4485480221084675&#39;
+creditCardExpirationDate // 04/13
+creditCardExpirationDateString // &#39;04/13&#39;
+creditCardDetails       // array(&#39;MasterCard&#39;, &#39;4485480221084675&#39;, &#39;Aleksander Nowak&#39;, &#39;04/13&#39;)
+// Generates a random IBAN. Set $countryCode to null for a random country
+iban($countryCode)      // &#39;IT31A8497112740YZ575DJ28BP4&#39;
+swiftBicNumber          // &#39;RZTIAT22263&#39;
+</code></pre></div>
+<h3 id="fakerprovidercolor"><code>Faker\Provider\Color</code></h3>
+<div class="highlight"><pre><span></span><code>hexcolor               // &#39;#fa3cc2&#39;
+rgbcolor               // &#39;0,255,122&#39;
+rgbColorAsArray        // array(0,255,122)
+rgbCssColor            // &#39;rgb(0,255,122)&#39;
+safeColorName          // &#39;fuchsia&#39;
+colorName              // &#39;Gainsbor&#39;
+hslColor               // &#39;340,50,20&#39;
+hslColorAsArray        // array(340,50,20)
+</code></pre></div>
+<h3 id="fakerproviderfile"><code>Faker\Provider\File</code></h3>
+<div class="highlight"><pre><span></span><code>fileExtension          // &#39;avi&#39;
+mimeType               // &#39;video/x-msvideo&#39;
+// Copy a random file from the source to the target directory and returns the fullpath or filename
+file($sourceDir = &#39;/tmp&#39;, $targetDir = &#39;/tmp&#39;) // &#39;/path/to/targetDir/13b73edae8443990be1aa8f1a483bc27.jpg&#39;
+file($sourceDir, $targetDir, false) // &#39;13b73edae8443990be1aa8f1a483bc27.jpg&#39;
+</code></pre></div>
+<h3 id="fakerproviderimage"><code>Faker\Provider\Image</code></h3>
+<div class="highlight"><pre><span></span><code>// Image generation provided by Placeholder (https://placeholder.com/)
+imageUrl($width = 640, $height = 480) // &#39;https://via.placeholder.com/640x480.png/000044?text=inventore&#39;
+imageUrl($width, $height, &#39;cats&#39;)     // &#39;https://via.placeholder.com/640x480.png/0022ff?text=cats+quia&#39;
+imageUrl($width, $height, &#39;cats&#39;, true, &#39;Faker&#39;) // &#39;https://via.placeholder.com/640x480.png/00ddcc?text=cats+Faker+labore&#39;
+imageUrl($width, $height, &#39;cats&#39;, true, &#39;Faker&#39;, true) // &#39;https://via.placeholder.com/640x480.png/CCCCCC?text=cats+Faker+sit&#39; Monochrome image
+image($dir = &#39;/tmp&#39;, $width = 640, $height = 480) // &#39;/tmp/13b73edae8443990be1aa8f1a483bc27.jpg&#39;
+image($dir, $width, $height, &#39;cats&#39;)  // &#39;tmp/13b73edae8443990be1aa8f1a483bc27.jpg&#39; it&#39;s a cat!
+image($dir, $width, $height, &#39;cats&#39;, false) // &#39;13b73edae8443990be1aa8f1a483bc27.jpg&#39; it&#39;s a filename without path
+image($dir, $width, $height, &#39;cats&#39;, true, false) // it&#39;s a no randomize images (default: `true`)
+image($dir, $width, $height, &#39;cats&#39;, true, true, &#39;Faker&#39;) // &#39;tmp/13b73edae8443990be1aa8f1a483bc27.jpg&#39; it&#39;s a cat with &#39;Faker&#39; text. Default, `null`.
+</code></pre></div>
+<h3 id="fakerprovideruuid"><code>Faker\Provider\Uuid</code></h3>
+<div class="highlight"><pre><span></span><code>uuid                   // &#39;7e57d004-2b97-0e7a-b45f-5387367791cd&#39;
+</code></pre></div>
+<h3 id="fakerproviderbarcode"><code>Faker\Provider\Barcode</code></h3>
+<div class="highlight"><pre><span></span><code>ean13          // &#39;4006381333931&#39;
+ean8           // &#39;73513537&#39;
+isbn13         // &#39;9790404436093&#39;
+isbn10         // &#39;4881416324&#39;
+</code></pre></div>
+<h3 id="fakerprovidermiscellaneous"><code>Faker\Provider\Miscellaneous</code></h3>
+<div class="highlight"><pre><span></span><code>boolean // false
+boolean($chanceOfGettingTrue = 50) // true
+md5           // &#39;de99a620c50f2990e87144735cd357e7&#39;
+sha1          // &#39;f08e7f04ca1a413807ebc47551a40a20a0b4de5c&#39;
+sha256        // &#39;0061e4c60dac5c1d82db0135a42e00c89ae3a333e7c26485321f24348c7e98a5&#39;
+locale        // en_UK
+countryCode   // UK
+languageCode  // en
+currencyCode  // EUR
+emoji         // 😁
+</code></pre></div>
+<h3 id="fakerproviderbiased"><code>Faker\Provider\Biased</code></h3>
+<div class="highlight"><pre><span></span><code>// get a random number between 10 and 20,
+// with more chances to be close to 20
+biasedNumberBetween($min = 10, $max = 20, $function = &#39;sqrt&#39;)
+</code></pre></div>
+<h3 id="fakerproviderhtmllorem"><code>Faker\Provider\HtmlLorem</code></h3>
+<div class="highlight"><pre><span></span><code>//Generate HTML document which is no more than 2 levels deep, and no more than 3 elements wide at any level.
+randomHtml(2,3)   // &lt;html&gt;&lt;head&gt;&lt;title&gt;Aut illo dolorem et accusantium eum.&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;form action=&quot;example.com&quot; method=&quot;POST&quot;&gt;&lt;label for=&quot;username&quot;&gt;sequi&lt;/label&gt;&lt;input type=&quot;text&quot; id=&quot;username&quot;&gt;&lt;label for=&quot;password&quot;&gt;et&lt;/label&gt;&lt;input type=&quot;password&quot; id=&quot;password&quot;&gt;&lt;/form&gt;&lt;b&gt;Id aut saepe non mollitia voluptas voluptas.&lt;/b&gt;&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;tr&gt;Non consequatur.&lt;/tr&gt;&lt;tr&gt;Incidunt est.&lt;/tr&gt;&lt;tr&gt;Aut voluptatem.&lt;/tr&gt;&lt;tr&gt;Officia voluptas rerum quo.&lt;/tr&gt;&lt;tr&gt;Asperiores similique.&lt;/tr&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Sapiente dolorum dolorem sint laboriosam commodi qui.&lt;/td&gt;&lt;td&gt;Commodi nihil nesciunt eveniet quo repudiandae.&lt;/td&gt;&lt;td&gt;Voluptates explicabo numquam distinctio necessitatibus repellat.&lt;/td&gt;&lt;td&gt;Provident ut doloremque nam eum modi aspernatur.&lt;/td&gt;&lt;td&gt;Iusto inventore.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Animi nihil ratione id mollitia libero ipsa quia tempore.&lt;/td&gt;&lt;td&gt;Velit est officia et aut tenetur dolorem sed mollitia expedita.&lt;/td&gt;&lt;td&gt;Modi modi repudiandae pariatur voluptas rerum ea incidunt non molestiae eligendi eos deleniti.&lt;/td&gt;&lt;td&gt;Exercitationem voluptatibus dolor est iste quod molestiae.&lt;/td&gt;&lt;td&gt;Quia reiciendis.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Inventore impedit exercitationem voluptatibus rerum cupiditate.&lt;/td&gt;&lt;td&gt;Qui.&lt;/td&gt;&lt;td&gt;Aliquam.&lt;/td&gt;&lt;td&gt;Autem nihil aut et.&lt;/td&gt;&lt;td&gt;Dolor ut quia error.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Enim facilis iusto earum et minus rerum assumenda quis quia.&lt;/td&gt;&lt;td&gt;Reprehenderit ut sapiente occaecati voluptatum dolor voluptatem vitae qui velit.&lt;/td&gt;&lt;td&gt;Quod fugiat non.&lt;/td&gt;&lt;td&gt;Sunt nobis totam mollitia sed nesciunt est deleniti cumque.&lt;/td&gt;&lt;td&gt;Repudiandae quo.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Modi dicta libero quisquam doloremque qui autem.&lt;/td&gt;&lt;td&gt;Voluptatem aliquid saepe laudantium facere eos sunt dolor.&lt;/td&gt;&lt;td&gt;Est eos quis laboriosam officia expedita repellendus quia natus.&lt;/td&gt;&lt;td&gt;Et neque delectus quod fugit enim repudiandae qui.&lt;/td&gt;&lt;td&gt;Fugit soluta sit facilis facere repellat culpa magni voluptatem maiores tempora.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Enim dolores doloremque.&lt;/td&gt;&lt;td&gt;Assumenda voluptatem eum perferendis exercitationem.&lt;/td&gt;&lt;td&gt;Quasi in fugit deserunt ea perferendis sunt nemo consequatur dolorum soluta.&lt;/td&gt;&lt;td&gt;Maxime repellat qui numquam voluptatem est modi.&lt;/td&gt;&lt;td&gt;Alias rerum rerum hic hic eveniet.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Tempore voluptatem.&lt;/td&gt;&lt;td&gt;Eaque.&lt;/td&gt;&lt;td&gt;Et sit quas fugit iusto.&lt;/td&gt;&lt;td&gt;Nemo nihil rerum dignissimos et esse.&lt;/td&gt;&lt;td&gt;Repudiandae ipsum numquam.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Nemo sunt quia.&lt;/td&gt;&lt;td&gt;Sint tempore est neque ducimus harum sed.&lt;/td&gt;&lt;td&gt;Dicta placeat atque libero nihil.&lt;/td&gt;&lt;td&gt;Et qui aperiam temporibus facilis eum.&lt;/td&gt;&lt;td&gt;Ut dolores qui enim et maiores nesciunt.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Dolorum totam sint debitis saepe laborum.&lt;/td&gt;&lt;td&gt;Quidem corrupti ea.&lt;/td&gt;&lt;td&gt;Cum voluptas quod.&lt;/td&gt;&lt;td&gt;Possimus consequatur quasi dolorem ut et.&lt;/td&gt;&lt;td&gt;Et velit non hic labore repudiandae quis.&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;
+</code></pre></div>
+<h2 id="modifiers">Modifiers</h2>
+<p>Faker provides three special providers, <code>unique()</code>, <code>optional()</code>, and <code>valid()</code>, to be called before any provider.</p>
+<div class="highlight"><pre><span></span><code><span class="x">// unique() forces providers to return unique values</span>
+<span class="x">$values = array();</span>
+<span class="x">for ($i = 0; $i &lt; 10; $i++) {</span>
+<span class="x">  // get a random digit, but always a new one, to avoid duplicates</span>
+<span class="x">  $values []= $faker-&gt;unique()-&gt;randomDigit;</span>
+<span class="x">}</span>
+<span class="x">print_r($values); // [4, 1, 8, 5, 0, 2, 6, 9, 7, 3]</span>
+
+<span class="x">// providers with a limited range will throw an exception when no new unique value can be generated</span>
+<span class="x">$values = array();</span>
+<span class="x">try {</span>
+<span class="x">  for ($i = 0; $i &lt; 10; $i++) {</span>
+<span class="x">    $values []= $faker-&gt;unique()-&gt;randomDigitNotNull;</span>
+<span class="x">  }</span>
+<span class="x">} catch (\OverflowException $e) {</span>
+<span class="x">  echo &quot;There are only 9 unique digits not null, Faker can&#39;t generate 10 of them!&quot;;</span>
+<span class="x">}</span>
+
+<span class="x">// you can reset the unique modifier for all providers by passing true as first argument</span>
+<span class="x">$faker-&gt;unique($reset = true)-&gt;randomDigitNotNull; // will not throw OverflowException since unique() was reset</span>
+<span class="x">// tip: unique() keeps one array of values per provider</span>
+
+<span class="x">// optional() sometimes bypasses the provider to return a default value instead (which defaults to NULL)</span>
+<span class="x">$values = array();</span>
+<span class="x">for ($i = 0; $i &lt; 10; $i++) {</span>
+<span class="x">  // get a random digit, but also null sometimes</span>
+<span class="x">  $values []= $faker-&gt;optional()-&gt;randomDigit;</span>
+<span class="x">}</span>
+<span class="x">print_r($values); // [1, 4, null, 9, 5, null, null, 4, 6, null]</span>
+
+<span class="x">// optional() accepts a weight argument to specify the probability of receiving the default value.</span>
+<span class="x">// 0 will always return the default value; 1 will always return the provider. Default weight is 0.5 (50% chance).</span>
+<span class="x">$faker-&gt;optional($weight = 0.1)-&gt;randomDigit; // 90% chance of NULL</span>
+<span class="x">$faker-&gt;optional($weight = 0.9)-&gt;randomDigit; // 10% chance of NULL</span>
+
+<span class="x">// optional() accepts a default argument to specify the default value to return.</span>
+<span class="x">// Defaults to NULL.</span>
+<span class="x">$faker-&gt;optional($weight = 0.5, $default = false)-&gt;randomDigit; // 50% chance of FALSE</span>
+<span class="x">$faker-&gt;optional($weight = 0.9, $default = &#39;abc&#39;)-&gt;word; // 10% chance of &#39;abc&#39;</span>
+
+<span class="x">// valid() only accepts valid values according to the passed validator functions</span>
+<span class="x">$values = array();</span>
+<span class="x">$evenValidator = function($digit) {</span>
+<span class="x">    return $digit % 2 === 0;</span>
+<span class="x">};</span>
+<span class="x">for ($i = 0; $i &lt; 10; $i++) {</span>
+<span class="x">    $values []= $faker-&gt;valid($evenValidator)-&gt;randomDigit;</span>
+<span class="x">}</span>
+<span class="x">print_r($values); // [0, 4, 8, 4, 2, 6, 0, 8, 8, 6]</span>
+
+<span class="x">// just like unique(), valid() throws an overflow exception when it can&#39;t generate a valid value</span>
+<span class="x">$values = array();</span>
+<span class="x">try {</span>
+<span class="x">  $faker-&gt;valid($evenValidator)-&gt;randomElement([1, 3, 5, 7, 9]);</span>
+<span class="x">} catch (\OverflowException $e) {</span>
+<span class="x">  echo &quot;Can&#39;t pick an even number in that set!&quot;;</span>
+<span class="x">}</span>
+</code></pre></div>
+<p>If you would like to use a modifier with a value not generated by Faker, use the <code>passthrough()</code> method. <code>passthrough()</code> simply returns whatever value it was given.</p>
+<div class="highlight"><pre><span></span><code><span class="x">$faker-&gt;optional()-&gt;passthrough(mt_rand(5, 15));</span>
+</code></pre></div>
+<h2 id="localization">Localization</h2>
+<p><code>Faker\Factory</code> can take a locale as an argument, to return localized data. If no localized provider is found, the factory fallbacks to the default locale (en_US).</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nv">$faker</span> <span class="o">=</span> <span class="nx">Faker\Factory</span><span class="o">::</span><span class="na">create</span><span class="p">(</span><span class="s1">&#39;fr_FR&#39;</span><span class="p">);</span> <span class="c1">// create a French faker</span>
+<span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nv">$i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="nv">$faker</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+  <span class="c1">// Luce du Coulon</span>
+  <span class="c1">// Auguste Dupont</span>
+  <span class="c1">// Roger Le Voisin</span>
+  <span class="c1">// Alexandre Lacroix</span>
+  <span class="c1">// Jacques Humbert-Roy</span>
+  <span class="c1">// Thérèse Guillet-Andre</span>
+  <span class="c1">// Gilles Gros-Bodin</span>
+  <span class="c1">// Amélie Pires</span>
+  <span class="c1">// Marcel Laporte</span>
+  <span class="c1">// Geneviève Marchal</span>
+</code></pre></div>
+<p>You can check available Faker locales in the source code, <a href="https://github.com/FakerPHP/Faker/tree/1.10/src/Faker/Provider">under the <code>Provider</code> directory</a>. The localization of Faker is an ongoing process, for which we need your help. Don't hesitate to create localized providers to your own locale and submit a PR!</p>
+<h2 id="populating-entities-using-an-orm-or-an-odm">Populating Entities Using an ORM or an ODM</h2>
+<p>Faker provides adapters for Object-Relational and Object-Document Mappers (currently, <a href="http://www.propelorm.org">Propel</a>, <a href="http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/">Doctrine2</a>, <a href="http://cakephp.org">CakePHP</a>, <a href="https://github.com/vlucas/spot2">Spot2</a>, <a href="https://github.com/mandango/mandango">Mandango</a> and <a href="https://laravel.com/docs/master/eloquent">Eloquent</a> are supported). These adapters ease the population of databases through the Entity classes provided by an ORM library (or the population of document stores using Document classes provided by an ODM library).</p>
+<p>To populate entities, create a new populator class (using a generator instance as parameter), then list the class and number of all the entities that must be generated. To launch the actual data population, call the <code>execute()</code> method.</p>
+<p>Note that some of the <code>populators</code> could require additional parameters. As example the <code>doctrine</code> populator has an option to specify
+its batchSize on how often it will flush the UnitOfWork to the database.</p>
+<p>Here is an example showing how to populate 5 <code>Author</code> and 10 <code>Book</code> objects:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nv">$generator</span> <span class="o">=</span> <span class="nx">\Faker\Factory</span><span class="o">::</span><span class="na">create</span><span class="p">();</span>
+<span class="nv">$populator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Faker\ORM\Propel\Populator</span><span class="p">(</span><span class="nv">$generator</span><span class="p">);</span>
+<span class="nv">$populator</span><span class="o">-&gt;</span><span class="na">addEntity</span><span class="p">(</span><span class="s1">&#39;Author&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+<span class="nv">$populator</span><span class="o">-&gt;</span><span class="na">addEntity</span><span class="p">(</span><span class="s1">&#39;Book&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+<span class="nv">$insertedPKs</span> <span class="o">=</span> <span class="nv">$populator</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span>
+</code></pre></div>
+<p>The populator uses name and column type guessers to populate each column with relevant data. For instance, Faker populates a column named <code>first_name</code> using the <code>firstName</code> formatter, and a column with a <code>TIMESTAMP</code> type using the <code>dateTime</code> formatter. The resulting entities are therefore coherent. If Faker misinterprets a column name, you can still specify a custom closure to be used for populating a particular column, using the third argument to <code>addEntity()</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nv">$populator</span><span class="o">-&gt;</span><span class="na">addEntity</span><span class="p">(</span><span class="s1">&#39;Book&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+  <span class="s1">&#39;ISBN&#39;</span> <span class="o">=&gt;</span> <span class="k">function</span><span class="p">()</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$generator</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nv">$generator</span><span class="o">-&gt;</span><span class="na">ean13</span><span class="p">();</span> <span class="p">}</span>
+<span class="p">));</span>
+</code></pre></div>
+<p>In this example, Faker will guess a formatter for all columns except <code>ISBN</code>, for which the given anonymous function will be used.</p>
+<p><strong>Tip</strong>: To ignore some columns, specify <code>null</code> for the column names in the third argument of <code>addEntity()</code>. This is usually necessary for columns added by a behavior:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nv">$populator</span><span class="o">-&gt;</span><span class="na">addEntity</span><span class="p">(</span><span class="s1">&#39;Book&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+  <span class="s1">&#39;CreatedAt&#39;</span> <span class="o">=&gt;</span> <span class="k">null</span><span class="p">,</span>
+  <span class="s1">&#39;UpdatedAt&#39;</span> <span class="o">=&gt;</span> <span class="k">null</span><span class="p">,</span>
+<span class="p">));</span>
+</code></pre></div>
+<p>Of course, Faker does not populate autoincremented primary keys. In addition, <code>Faker\ORM\Propel\Populator::execute()</code> returns the list of inserted PKs, indexed by class:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$insertedPKs</span><span class="p">);</span>
+<span class="c1">// array(</span>
+<span class="c1">//   &#39;Author&#39; =&gt; (34, 35, 36, 37, 38),</span>
+<span class="c1">//   &#39;Book&#39;   =&gt; (456, 457, 458, 459, 470, 471, 472, 473, 474, 475)</span>
+<span class="c1">// )</span>
+</code></pre></div>
+<p><strong>Note:</strong> Due to the fact that <code>Faker</code> returns all the primary keys inserted, the memory consumption will go up drastically when you do batch inserts due to the big list of data.</p>
+<p>In the previous example, the <code>Book</code> and <code>Author</code> models share a relationship. Since <code>Author</code> entities are populated first, Faker is smart enough to relate the populated <code>Book</code> entities to one of the populated <code>Author</code> entities.</p>
+<p>Lastly, if you want to execute an arbitrary function on an entity before insertion, use the fourth argument of the <code>addEntity()</code> method:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nv">$populator</span><span class="o">-&gt;</span><span class="na">addEntity</span><span class="p">(</span><span class="s1">&#39;Book&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="k">array</span><span class="p">(),</span> <span class="k">array</span><span class="p">(</span>
+  <span class="k">function</span><span class="p">(</span><span class="nv">$book</span><span class="p">)</span> <span class="p">{</span> <span class="nv">$book</span><span class="o">-&gt;</span><span class="na">publish</span><span class="p">();</span> <span class="p">},</span>
+<span class="p">));</span>
+</code></pre></div>
+<h2 id="seeding-the-generator">Seeding the Generator</h2>
+<p>You may want to get always the same generated data - for instance when using Faker for unit testing purposes. The generator offers a <code>seed()</code> method, which seeds the random number generator. Calling the same script twice with the same seed produces the same results.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nv">$faker</span> <span class="o">=</span> <span class="nx">Faker\Factory</span><span class="o">::</span><span class="na">create</span><span class="p">();</span>
+<span class="nv">$faker</span><span class="o">-&gt;</span><span class="na">seed</span><span class="p">(</span><span class="mi">1234</span><span class="p">);</span>
+
+<span class="k">echo</span> <span class="nv">$faker</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">;</span> <span class="c1">// &#39;Jess Mraz I&#39;;</span>
+</code></pre></div>
+<blockquote>
+<p><strong>Tip</strong>: DateTime formatters won't reproduce the same fake data if you don't fix the <code>$max</code> value:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// even when seeded, this line will return different results because $max varies</span>
+<span class="nv">$faker</span><span class="o">-&gt;</span><span class="na">dateTime</span><span class="p">();</span> <span class="c1">// equivalent to $faker-&gt;dateTime($max = &#39;now&#39;)</span>
+<span class="c1">// make sure you fix the $max parameter</span>
+<span class="nv">$faker</span><span class="o">-&gt;</span><span class="na">dateTime</span><span class="p">(</span><span class="s1">&#39;2014-02-25 08:37:17&#39;</span><span class="p">);</span> <span class="c1">// will return always the same date when seeded</span>
+</code></pre></div>
+<p><strong>Tip</strong>: Formatters won't reproduce the same fake data if you use the <code>rand()</code> php function. Use <code>$faker</code> or <code>mt_rand()</code> instead:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="c1">// bad</span>
+<span class="nv">$faker</span><span class="o">-&gt;</span><span class="na">realText</span><span class="p">(</span><span class="nb">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">));</span>
+<span class="c1">// good</span>
+<span class="nv">$faker</span><span class="o">-&gt;</span><span class="na">realText</span><span class="p">(</span><span class="nv">$faker</span><span class="o">-&gt;</span><span class="na">numberBetween</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">));</span>
+</code></pre></div>
+</blockquote>
+<h2 id="faker-internals-understanding-providers">Faker Internals: Understanding Providers</h2>
+<p>A <code>Faker\Generator</code> alone can't do much generation. It needs <code>Faker\Provider</code> objects to delegate the data generation to them. <code>Faker\Factory::create()</code> actually creates a <code>Faker\Generator</code> bundled with the default providers. Here is what happens under the hood:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nv">$faker</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Faker\Generator</span><span class="p">();</span>
+<span class="nv">$faker</span><span class="o">-&gt;</span><span class="na">addProvider</span><span class="p">(</span><span class="k">new</span> <span class="nx">Faker\Provider\en_US\Person</span><span class="p">(</span><span class="nv">$faker</span><span class="p">));</span>
+<span class="nv">$faker</span><span class="o">-&gt;</span><span class="na">addProvider</span><span class="p">(</span><span class="k">new</span> <span class="nx">Faker\Provider\en_US\Address</span><span class="p">(</span><span class="nv">$faker</span><span class="p">));</span>
+<span class="nv">$faker</span><span class="o">-&gt;</span><span class="na">addProvider</span><span class="p">(</span><span class="k">new</span> <span class="nx">Faker\Provider\en_US\PhoneNumber</span><span class="p">(</span><span class="nv">$faker</span><span class="p">));</span>
+<span class="nv">$faker</span><span class="o">-&gt;</span><span class="na">addProvider</span><span class="p">(</span><span class="k">new</span> <span class="nx">Faker\Provider\en_US\Company</span><span class="p">(</span><span class="nv">$faker</span><span class="p">));</span>
+<span class="nv">$faker</span><span class="o">-&gt;</span><span class="na">addProvider</span><span class="p">(</span><span class="k">new</span> <span class="nx">Faker\Provider\Lorem</span><span class="p">(</span><span class="nv">$faker</span><span class="p">));</span>
+<span class="nv">$faker</span><span class="o">-&gt;</span><span class="na">addProvider</span><span class="p">(</span><span class="k">new</span> <span class="nx">Faker\Provider\Internet</span><span class="p">(</span><span class="nv">$faker</span><span class="p">));</span>
+<span class="sb">````</span>
+
+<span class="nx">Whenever</span> <span class="nx">you</span> <span class="k">try</span> <span class="nx">to</span> <span class="nx">access</span> <span class="nx">a</span> <span class="nx">property</span> <span class="nx">on</span> <span class="nx">the</span> <span class="sb">`$faker`</span> <span class="nx">object</span><span class="p">,</span> <span class="nx">the</span> <span class="nx">generator</span> <span class="nx">looks</span> <span class="k">for</span> <span class="nx">a</span> <span class="nx">method</span> <span class="nx">with</span> <span class="nx">the</span> <span class="nx">same</span> <span class="nx">name</span> <span class="nx">in</span> <span class="nx">all</span> <span class="nx">the</span> <span class="nx">providers</span> <span class="nx">attached</span> <span class="nx">to</span> <span class="nx">it</span><span class="o">.</span> <span class="k">For</span> <span class="nx">instance</span><span class="p">,</span> <span class="nx">calling</span> <span class="sb">`$faker-&gt;name`</span> <span class="nx">triggers</span> <span class="nx">a</span> <span class="nx">call</span> <span class="nx">to</span> <span class="sb">`Faker\Provider\Person::name()`</span><span class="o">.</span> <span class="k">And</span> <span class="nx">since</span> <span class="nx">Faker</span> <span class="nx">starts</span> <span class="nx">with</span> <span class="nx">the</span> <span class="nx">last</span> <span class="nx">provider</span><span class="p">,</span> <span class="nx">you</span> <span class="nx">can</span> <span class="nx">easily</span> <span class="nx">override</span> <span class="nx">existing</span> <span class="nx">formatters</span><span class="o">:</span> <span class="nx">just</span> <span class="nx">add</span> <span class="nx">a</span> <span class="nx">provider</span> <span class="nx">containing</span> <span class="nx">methods</span> <span class="nx">named</span> <span class="nx">after</span> <span class="nx">the</span> <span class="nx">formatters</span> <span class="nx">you</span> <span class="nx">want</span> <span class="nx">to</span> <span class="nx">override</span><span class="o">.</span>
+
+<span class="nx">That</span> <span class="nx">means</span> <span class="nx">that</span> <span class="nx">you</span> <span class="nx">can</span> <span class="nx">easily</span> <span class="nx">add</span> <span class="nx">your</span> <span class="nx">own</span> <span class="nx">providers</span> <span class="nx">to</span> <span class="nx">a</span> <span class="sb">`Faker\Generator`</span> <span class="nx">instance</span><span class="o">.</span> <span class="nx">A</span> <span class="nx">provider</span> <span class="nx">is</span> <span class="nx">usually</span> <span class="nx">a</span> <span class="k">class</span> <span class="nc">extending</span> <span class="sb">`\Faker\Provider\Base`</span><span class="o">.</span> <span class="k">This</span> <span class="k">parent</span> <span class="k">class</span> <span class="nc">allows</span> <span class="nx">you</span> <span class="nx">to</span> <span class="k">use</span> <span class="nx">methods</span> <span class="nx">like</span> <span class="sb">`lexify()`</span> <span class="k">or</span> <span class="sb">`randomNumber()`</span><span class="p">;</span> <span class="nx">it</span> <span class="nx">also</span> <span class="nx">gives</span> <span class="nx">you</span> <span class="nx">access</span> <span class="nx">to</span> <span class="nx">formatters</span> <span class="nx">of</span> <span class="nx">other</span> <span class="nx">providers</span><span class="p">,</span> <span class="nx">through</span> <span class="nx">the</span> <span class="k">protected</span> <span class="sb">`$generator`</span> <span class="nx">property</span><span class="o">.</span> <span class="nx">The</span> <span class="k">new</span> <span class="nx">formatters</span> <span class="nx">are</span> <span class="nx">the</span> <span class="k">public</span> <span class="nx">methods</span> <span class="nx">of</span> <span class="nx">the</span> <span class="nx">provider</span> <span class="nx">class</span><span class="o">.</span>
+
+<span class="nx">Here</span> <span class="nx">is</span> <span class="nx">an</span> <span class="nx">example</span> <span class="nx">provider</span> <span class="k">for</span> <span class="nx">populating</span> <span class="nx">Book</span> <span class="nx">data</span><span class="o">:</span>
+
+<span class="sb">``</span><span class="err">`</span><span class="nx">php</span>
+<span class="o">&lt;?</span><span class="nx">php</span>
+
+<span class="k">namespace</span> <span class="nx">Faker\Provider</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Book</span> <span class="k">extends</span> <span class="nx">\Faker\Provider\Base</span>
+<span class="p">{</span>
+  <span class="k">public</span> <span class="k">function</span> <span class="nf">title</span><span class="p">(</span><span class="nv">$nbWords</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="nv">$sentence</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">generator</span><span class="o">-&gt;</span><span class="na">sentence</span><span class="p">(</span><span class="nv">$nbWords</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nb">substr</span><span class="p">(</span><span class="nv">$sentence</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">strlen</span><span class="p">(</span><span class="nv">$sentence</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">public</span> <span class="k">function</span> <span class="nf">ISBN</span><span class="p">()</span>
+  <span class="p">{</span>
+    <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">generator</span><span class="o">-&gt;</span><span class="na">ean13</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>To register this provider, just add a new instance of <code>\Faker\Provider\Book</code> to an existing generator:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nv">$faker</span><span class="o">-&gt;</span><span class="na">addProvider</span><span class="p">(</span><span class="k">new</span> <span class="nx">\Faker\Provider\Book</span><span class="p">(</span><span class="nv">$faker</span><span class="p">));</span>
+</code></pre></div>
+<p>Now you can use the two new formatters like any other Faker formatter:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nv">$book</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Book</span><span class="p">();</span>
+<span class="nv">$book</span><span class="o">-&gt;</span><span class="na">setTitle</span><span class="p">(</span><span class="nv">$faker</span><span class="o">-&gt;</span><span class="na">title</span><span class="p">);</span>
+<span class="nv">$book</span><span class="o">-&gt;</span><span class="na">setISBN</span><span class="p">(</span><span class="nv">$faker</span><span class="o">-&gt;</span><span class="na">ISBN</span><span class="p">);</span>
+<span class="nv">$book</span><span class="o">-&gt;</span><span class="na">setSummary</span><span class="p">(</span><span class="nv">$faker</span><span class="o">-&gt;</span><span class="na">text</span><span class="p">);</span>
+<span class="nv">$book</span><span class="o">-&gt;</span><span class="na">setPrice</span><span class="p">(</span><span class="nv">$faker</span><span class="o">-&gt;</span><span class="na">randomNumber</span><span class="p">(</span><span class="mi">2</span><span class="p">));</span>
+</code></pre></div>
+<p><strong>Tip</strong>: A provider can also be a Plain Old PHP Object. In that case, all the public methods of the provider become available to the generator.</p>
+<h2 id="language-specific-formatters">Language specific formatters</h2>
+<p>Supported locales can be found under the "Locales" header on the left.</p>
+<h3 id="misnamed-locales">Misnamed locales</h3>
+<table>
+<thead>
+<tr>
+<th>Current name</th>
+<th>Correct name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>at_AT</code></td>
+<td><code>de_AT</code></td>
+</tr>
+<tr>
+<td><code>zh_CN</code></td>
+<td><code>zh_Hans_CN</code></td>
+</tr>
+<tr>
+<td><code>zh_TW</code></td>
+<td><code>zh_Hant_TW</code></td>
+</tr>
+</tbody>
+</table>
+<p>Source: <a href="https://www.localeplanet.com/icu/">https://www.localeplanet.com/icu/</a></p>
+<h2 id="third-party-libraries-extendingbased-on-faker">Third-Party Libraries Extending/Based On Faker</h2>
+<ul>
+<li>Symfony bundles:</li>
+<li><a href="https://github.com/willdurand/BazingaFakerBundle"><code>willdurand/faker-bundle</code></a>: Put the awesome Faker library into the Symfony2 DIC and populate your database with fake data.</li>
+<li><a href="https://github.com/hautelook/AliceBundle"><code>hautelook/alice-bundle</code></a>, <a href="https://github.com/h4cc/AliceFixturesBundle"><code>h4cc/alice-fixtures-bundle</code></a>: Bundles for using <a href="https://packagist.org/packages/nelmio/alice"><code>nelmio/alice</code></a> and Faker with data fixtures. Able to use Doctrine ORM as well as Doctrine MongoDB ODM.</li>
+<li><a href="https://github.com/EmanueleMinotto/FakerServiceProvider"><code>emanueleminotto/faker-service-provider</code></a>: Faker Service Provider for Silex</li>
+<li><a href="https://github.com/bit3/faker-cli"><code>bit3/faker-cli</code></a>: Command Line Tool for the Faker PHP library</li>
+<li><a href="https://github.com/thephpleague/factory-muffin"><code>league/factory-muffin</code></a>: enable the rapid creation of objects (PHP port of factory-girl)</li>
+<li><a href="https://github.com/fzaninotto/CompanyNameGenerator"><code>fzaninotto/company-name-generator</code></a>: Generate names for English tech companies with class</li>
+<li><a href="https://github.com/EmanueleMinotto/PlaceholdItProvider"><code>emanueleminotto/faker-placehold-it-provider</code></a>: Generate images using placehold.it</li>
+<li><a href="https://github.com/spyrit/datalea"><code>spyrit/datalea</code></a> A highly customizable random test data generator web app</li>
+<li><a href="https://github.com/frequenc1/newage-ipsum"><code>frequenc1/newage-ipsum</code></a>: A new aged ipsum provider for the faker library inspired by http://sebpearce.com/bullshit/</li>
+<li><a href="https://github.com/prewk/xml-faker"><code>prewk/xml-faker</code></a>: Create fake XML with Faker</li>
+<li><a href="https://github.com/denheck/faker-context"><code>denheck/faker-context</code></a>: Behat context using Faker to generate testdata</li>
+<li><a href="https://github.com/swekaj/CronExpressionGenerator"><code>swekaj/cron-expression-generator</code></a>: Faker provider for generating random, valid cron expressions.</li>
+<li><a href="https://github.com/pragmafabrik/Pomm2Faker"><code>pragmafabrik/pomm-faker</code></a>: Faker client for Pomm database framework (PostgreSQL)</li>
+<li><a href="https://github.com/nelmio/alice"><code>nelmio/alice</code></a>: Fixtures/object generator with a yaml DSL that can use Faker as data generator.</li>
+<li><a href="https://github.com/ravage84/cakephp-fake-seeder"><code>ravage84/cakephp-fake-seeder</code></a> A CakePHP 2.x shell to seed your database with fake and/or fixed data.</li>
+<li><a href="https://github.com/bruceheller/images-generator"><code>bheller/images-generator</code></a>: An image generator provider using GD for placeholder type pictures</li>
+<li><a href="https://github.com/pattern-lab/plugin-php-faker"><code>pattern-lab/plugin-faker</code></a>: Pattern Lab is a Styleguide, Component Library, and Prototyping tool. This creates unique content each time Pattern Lab is generated.</li>
+<li><a href="https://github.com/guidocella/eloquent-populator"><code>guidocella/eloquent-populator</code></a>: Adapter for Laravel's Eloquent ORM.</li>
+<li><a href="https://github.com/tamperdata/exiges"><code>tamperdata/exiges</code></a>: Faker provider for generating random temperatures</li>
+<li><a href="https://github.com/jzonta/FakerRestaurant"><code>jzonta/faker-restaurant</code></a>: Faker for Food and Beverage names generate</li>
+<li><a href="https://github.com/aalaap/faker-youtube"><code>aalaap/faker-youtube</code></a>: Faker for YouTube URLs in various formats</li>
+<li><a href="https://github.com/pelmered/fake-car"><code>pelmered/fake-car</code></a>: Faker for cars and car data</li>
+<li><a href="https://github.com/bluemmb/Faker-PicsumPhotos"><code>bluemmb/faker-picsum-photos-provider</code></a>: Generate images using <a href="http://picsum.photos/">picsum.photos</a></li>
+<li><a href="https://github.com/er1z/fakemock"><code>er1z/fakemock</code></a>: Generate mocks using class-configuration and detection via Faker's guesser and Symfony asserts</li>
+<li><a href="https://github.com/xvladxtremal/Faker-LoremFlickr"><code>xvladqt/faker-lorem-flickr</code></a>: Generate images using <a href="http://loremflickr.com/">loremflickr.com</a></li>
+<li><a href="https://github.com/Metrakit/faker-eddy-malou"><code>metrakit/faker-eddy-malou</code></a>: Generate French Eddy Malou sentences &amp; paragraphs</li>
+<li><a href="https://github.com/drupol/belgian-national-number-faker"><code>drupol/belgian-national-number-faker</code></a>: Generate fake Belgian national numbers</li>
+<li><a href="https://github.com/elgentos/masquerade"><code>elgentos/masquerade</code></a>: Configuration-based, platform-agnostic, locale-compatible data faker tool (out-of-the-box support for Magento 2)</li>
+<li><a href="https://github.com/ottaviano/faker-gravatar"><code>ottaviano/faker-gravatar</code></a>: Generate avatars using <a href="https://en.gravatar.com/site/implement/images/">Gravatar</a></li>
+<li><a href="https://github.com/finwe/phpstan-faker"><code>finwe/phpstan-faker</code></a>: PHPStan extension for Faker methods</li>
+<li><a href="https://github.com/SpringbokAgency/faker-xpdo-orm-adapter"><code>springbokagency/faker-xpdo-orm-adapter</code></a>: A Faker ORM adapter to populate xPDO objects with fake data.</li>
+</ul>
+<h2 id="license">License</h2>
+<p>Faker is released under the MIT License. See the bundled LICENSE file for details.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+        
+          <a href="locales/ar_SA/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Arabic (Saudi Arabia)
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+      <a href="https://github.com/FakerPHP/Faker" target="_blank" rel="noopener" title="Faker" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="assets/javascripts/vendor.7e0ee788.min.js"></script>
+      <script src="assets/javascripts/bundle.b3a72adc.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: ".",
+          features: ['navigation.instant'],
+          search: Object.assign({
+            worker: "assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
